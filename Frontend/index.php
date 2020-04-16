@@ -15,31 +15,33 @@
     </head>
     <body>
         <div style="height: 100px">
-            <form action = "" method="POST">
+            <form action = "/index.php" method="POST">
                 <label for="auto">Put Address here: </label>
-                <?php
-                    if(isset($_POST['submit']))
-                    {
-                        $name = $_POST['loc'];
-                        
-                        $url = "http://localhost:8081/autoAPI.php".$name;
-                        
-                        $client = curl_init($url);
-                        curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
-                        $response = curl_exec($client);
-                        
-                        $result = json_decode($response);
-                        
-                        echo $result->data; 
-                    }
-                ?>
+                
                 <input id="auto" name="loc" style=" width: 200px" type="text">
+                <button type="submit" name="submit" >Submit</button>
             </form>
                 
         </div>
         <div id="mapid" style="height: 500px; width: 500px; float: left;"></div>
         
     </body>
+    <?php
+        if(isset($_POST['submit']))
+        {
+            $name = $_POST['loc'];
+            
+            $url = "http://localhost:8081/autoAPI.php".$name;
+            
+            $client = curl_init($url);
+            curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
+            $response = curl_exec($client);
+            
+            $result = json_decode($response);
+            
+            echo $result->data; 
+        }
+    ?>
     <script>
         $("#auto").autocomplete({
             source: ["hello", "how are you", "why", "apple"]
