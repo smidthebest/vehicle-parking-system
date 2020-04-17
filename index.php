@@ -57,7 +57,7 @@
             console.log(lat + " " + lng); 
             if(lng < -180) lng = 360 + lng; 
             $("#auto").autocomplete({  
-                source: "autoAPI.php?lat="+lat+"&long="+lng  
+                source: "API/autoAPI.php?lat="+lat+"&long="+lng  
             }); 
 
         }
@@ -69,7 +69,7 @@
             e.preventDefault(); 
             var loc = $("#auto").val(); 
              $("#auto").val(""); 
-            $.getJSON("geocodeAPI.php?address=" + loc, function(result){
+            $.getJSON("API/geocodeAPI.php?address=" + loc, function(result){
                 if(result != null){
                     mymap.setView(result, 15); 
                     autocompleteUpdate(result["lat"], result["lng"]); 
