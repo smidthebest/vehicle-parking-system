@@ -1,17 +1,19 @@
 <?php
 
+//returns json data from url. 
 function get_from_link($url){
-    $options = array(
-        "ssl" => array(
-            "verify_peer"=>false,
-            "verify_peer_name"=>false,
-        )
-    ); 
+   $curl = curl_init($url); 
+   
+   curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+   curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1);
+    curl_setopt($curl, CURLOPT_CAINFO, 'cacert.pem');
 
-    $context = stream_context_create($options); 
-    $result = file_get_contents($url, false, $context); 
-
-    return $result; 
+   $output = curl_exec($curl);
+   
+   curl_close($curl);
+    
+   return $output; 
 }
 
 ?>
