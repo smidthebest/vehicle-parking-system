@@ -6,8 +6,8 @@ function get_from_link($url){
    
    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
-    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1);
-    curl_setopt($curl, CURLOPT_CAINFO, 'cacert.pem');
+   curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1);
+   curl_setopt($curl, CURLOPT_CAINFO, 'cacert.pem');
 
    $output = curl_exec($curl);
    
