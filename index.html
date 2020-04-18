@@ -8,25 +8,35 @@
             integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
             crossorigin=""/>
             <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
             crossorigin=""></script>
            <script src="//code.jquery.com/jquery-1.12.4.js"></script>
             <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+            <link rel="stylesheet" href="autocomplete.css">
+            
+        </head>
     <body>
-        <div class ="container .form-inline" style="height: 200px">
+        <div class ="container .form-inline" style=" padding: 4vmin">
             <form >
-                <label for="auto">Put Address here: </label>
-                
-                <input  class="ui-autocomplete-input" placeholder="Place Address" name = "term" id="auto"style=" width: 200px" type="text">
-                <button type="submit" name = "submit"  >Submit</button>
+                    
+                <div class = "input-group">
+                    
+                    <input  class="ui-autocomplete-input form-control" placeholder="Place Address" name = "term" id="auto" type="text">
+                    <div class="input-group-btn">
+                         <button class="btn btn-default" type="submit" name = "submit" >
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
             </form>
-                
         </div>
-        <div  class ="container" id="mapid" style="height: 400px; width: 100%; "></div>
+        
+        <div  class ="container" style="padding: 38vmin; z-index: -1;" id="mapid"  ></div>
+        
+       
         
     </body>
     
@@ -43,7 +53,7 @@
             accessToken: 'pk.eyJ1Ijoic21pZGRtaXNoIiwiYSI6ImNrOTA4a2xwajAwNWozZXM1c2FnanlmNTQifQ.f53gGVXjiBqVqYXum8n8wA'
         }).addTo(mymap);
         autocompleteUpdate(mymap.getCenter().lat, mymap.getCenter().lng); 
-
+        var marker;  
         mymap.on("move", check); 
 
         //Whenever map is moved, the new center is updated, so that the autocomplete results
@@ -73,8 +83,10 @@
              $("#auto").val(""); 
             $.getJSON("API/geocodeAPI.php?address=" + loc, function(result){
                 if(result != null){
-                    mymap.setView(result, 15); 
+                    mymap.setView(result, 18); 
                     autocompleteUpdate(result["lat"], result["lng"]); 
+                    if(marker != null) marker.remove(); 
+                    marker = L.marker(result).addTo(mymap); 
                 } 
             });
         }); 
