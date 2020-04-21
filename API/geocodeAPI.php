@@ -16,3 +16,4 @@ $result = get_from_link($url.http_build_query($data));
  echo json_encode( $array["results"][0]["geometry"]["location"]); 
 
 ?>
+

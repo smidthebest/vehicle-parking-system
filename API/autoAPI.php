@@ -1,6 +1,6 @@
 <?php
 require "util.php"; 
-
+include("top-cache.php");
 header("Content-Type: application/json"); 
 $name = $_GET["term"]; //what needs to be autocompleted by API
 $lat = $_GET["lat"]; //latitude of the center of map for biasing results
@@ -28,5 +28,5 @@ foreach($array_names["predictions"] as $key => $value){
 
 echo json_encode($ans); 
 
-
+include("bottom-cache.php"); 
 ?>

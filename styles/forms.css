@@ -1,0 +1,22 @@
+.actions{
+    display: inline-block;
+    
+}
+
+#button-actions{
+    padding: 4vmin;
+    padding-left: 0vmin
+}
+
+body{
+    background-color: rgb(189, 233, 146)
+}
+
+#address-form{
+    padding-top: 1vmin
+}
+
+#mapid {
+    padding: 33vmin;
+     z-index: 10;
+}
