@@ -3,8 +3,8 @@ require "util.php";
 
 class Request{
 
-    private $type; 
-    private $data; 
+    private $type; //which api to make call to. 
+    private $data; //data to be sent to api. 
     private $requestMethod; 
     private const AUTO_STRING = "https://maps.googleapis.com/maps/api/place/autocomplete/json?"; 
     private const GEOCODE_STRING = "https://maps.googleapis.com/maps/api/geocode/json?"; 
@@ -16,6 +16,7 @@ class Request{
     }
 
     public function processRequest(){
+
         switch($this->requestMethod){
             case 'GET':
                 $response = $this->getData(); 
@@ -23,15 +24,17 @@ class Request{
             default: 
                 $response = $this->notFoundResponse(); 
         }
+
         header($response['status_code_header']); 
-       
         if($response['body']){
            
             echo $response['body']; 
         }
     }
 
+    //sends request to api and filters to the appropriate data that the client requested. 
     private function getData(){
+         
         if($this->type == "auto"){
             $result = get_from_link(self::AUTO_STRING.http_build_query($this->data)); 
             $array_names = json_decode($result, true); 
@@ -55,6 +58,7 @@ class Request{
         }
     }
 
+    //If a call is made that the api is not designed to handle, 404 code is sent out. 
     private function notFoundResponse(){
         $response['status_code_header'] = 'HTTP/1.1 404 Not Found';
         $response['body'] = null;

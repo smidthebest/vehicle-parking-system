@@ -4,7 +4,7 @@ require "cache.php";
 $url = $_SERVER["REQUEST_URI"];
 $cache = new Cache($url); 
 
-if($cache->doesExist()){
+if($cache->getCache()){
     exit;
 }
 else {

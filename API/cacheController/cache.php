@@ -10,7 +10,7 @@ class Cache {
         $this->cachefile = 'cache/cached-'.$ans.'.json';     
     }
 
-    public function doesExist(){
+    public function getCache(){
         if (file_exists($this->cachefile) && time() - self::CACHETIME < filemtime($this->cachefile)) {
             readfile($this->cachefile);
            return true; 
@@ -18,7 +18,7 @@ class Cache {
         else return false; 
     }
 
-    public function createFile(){
+    public function putCache(){
         $cached = fopen($this->cachefile, 'w');
         fwrite($cached, ob_get_contents());
         fclose($cached);
