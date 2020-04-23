@@ -83,13 +83,14 @@
         $("form").submit(function (e){
             e.preventDefault(); 
             var loc = $("#auto").val(); 
-             $("#auto").val(""); 
+              
             $.getJSON("API/geocodeController.php?address=" + loc, function(result){
                 if(result != null){
                     mymap.setView(result, 18); 
                     autocompleteUpdate(result["lat"], result["lng"]); 
                     if(marker != null) marker.remove(); 
                     marker = L.marker(result).addTo(mymap); 
+                    $("#auto").val("");
                 } 
             });
         }); 

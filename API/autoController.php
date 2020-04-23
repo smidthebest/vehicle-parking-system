@@ -1,6 +1,6 @@
 <?php
 require "Request.php"; 
-include("top-cache.php");
+include("cacheController/top-cache.php");
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -36,5 +36,5 @@ if(!isset($data)){
 $request = new Request("auto", $data, $requestMethod);
 $request->processRequest(); 
 
-include("bottom-cache.php"); 
+include("cacheController/bottom-cache.php"); 
 ?>

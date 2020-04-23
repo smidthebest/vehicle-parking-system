@@ -6,8 +6,8 @@ class Request{
     private $type; 
     private $data; 
     private $requestMethod; 
-    private $auto_string = "https://maps.googleapis.com/maps/api/place/autocomplete/json?"; 
-    private $geocode_string = "https://maps.googleapis.com/maps/api/geocode/json?"; 
+    private const AUTO_STRING = "https://maps.googleapis.com/maps/api/place/autocomplete/json?"; 
+    private const GEOCODE_STRING = "https://maps.googleapis.com/maps/api/geocode/json?"; 
 
     public function __construct($type, $data, $requestMethod){
         $this->type = $type; 
@@ -33,7 +33,7 @@ class Request{
 
     private function getData(){
         if($this->type == "auto"){
-            $result = get_from_link($this->auto_string.http_build_query($this->data)); 
+            $result = get_from_link(self::AUTO_STRING.http_build_query($this->data)); 
             $array_names = json_decode($result, true); 
             $ans = array(); 
             foreach($array_names["predictions"] as $key => $value){
@@ -45,7 +45,7 @@ class Request{
             return $response; 
         }
         else if($this->type == "geocode"){
-            $result = get_from_link($this->geocode_string.http_build_query($this->data)); 
+            $result = get_from_link(self::GEOCODE_STRING.http_build_query($this->data)); 
             $array = json_decode($result, true); 
             
             $response['status_code_header'] = 'HTTP/1.1 200 OK'; 
