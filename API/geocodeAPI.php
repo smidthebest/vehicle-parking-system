@@ -1,20 +1,25 @@
 <?php
-require "util.php"; 
+require "Request.php"; 
 include("top-cache.php"); 
-$loc = $_GET['address']; 
-header("Content-Type: application/json"); 
-$url = "https://maps.googleapis.com/maps/api/geocode/json?";
 
-$data = array(
-    "address" => $loc, 
-    "key" => "AIzaSyCZRvqG4MqNFZRQH62bwcHuANO_1MqHCio"
-);
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Max-Age: 3600");
 
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 
-$result = get_from_link($url.http_build_query($data)); 
+if($requestMethod == "GET"){
+    $loc = $_GET['address']; 
+    $data = array(
+        "address" => $loc, 
+        "key" => "AIzaSyCZRvqG4MqNFZRQH62bwcHuANO_1MqHCio"
+    );
+}
+ 
+$request = new Request("geocode", $data, $requestMethod); 
+$request->processRequest(); 
 
- $array = json_decode($result, true); 
- echo json_encode( $array["results"][0]["geometry"]["location"]); 
 include("bottom-cache.php"); 
 ?>
 

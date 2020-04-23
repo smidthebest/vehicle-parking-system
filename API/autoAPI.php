@@ -1,32 +1,40 @@
 <?php
-require "util.php"; 
+require "Request.php"; 
 include("top-cache.php");
-header("Content-Type: application/json"); 
-$name = $_GET["term"]; //what needs to be autocompleted by API
-$lat = $_GET["lat"]; //latitude of the center of map for biasing results
-$long = $_GET["long"]; //longitude of the center of map for biasing results 
-$url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?"; 
 
-$data = array(
-    "input" => $name, 
-    "types" => "address",
-    "location" => "$lat,$long",
-    "radius" => 500, 
-    "key" => "AIzaSyCZRvqG4MqNFZRQH62bwcHuANO_1MqHCio"
-); 
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Max-Age: 3600");
 
-//gets json data from places API 
-$result = get_from_link($url.http_build_query($data)); 
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 
-//decodes json to filter out irrelevant information and return the location 
-// addresses. 
-$array_names = json_decode($result, true); 
-$ans = array(); 
-foreach($array_names["predictions"] as $key => $value){
-    array_push($ans, $value["description"]); 
+if($requestMethod == "GET"){
+    $name = $_GET["term"]; //what needs to be autocompleted by API
+    $lat = $_GET["lat"]; //latitude of the center of map for biasing results
+    $long = $_GET["long"]; //longitude of the center of map for biasing results 
+
+    if(!isset($name) or !isset($lat) or !isset($long)){
+        header("HTTP/1.1 404 Not Found"); 
+        exit(); 
+    }
+
+    $data = array(
+        "input" => $name, 
+        "types" => "address",
+        "location" => "$lat,$long",
+        "radius" => 500, 
+        "key" => "AIzaSyCZRvqG4MqNFZRQH62bwcHuANO_1MqHCio"
+    ); 
 }
 
-echo json_encode($ans); 
+if(!isset($data)){
+    header("HTTP/1.1 404 Not Found"); 
+    exit(); 
+}
+
+$request = new Request("auto", $data, $requestMethod);
+$request->processRequest(); 
 
 include("bottom-cache.php"); 
 ?>
