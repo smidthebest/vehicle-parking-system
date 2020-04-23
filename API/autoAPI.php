@@ -10,15 +10,15 @@ $url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?";
 $data = array(
     "input" => $name, 
     "types" => "address",
-     "location" => "$lat,$long",
-     "radius" => 500, 
+    "location" => "$lat,$long",
+    "radius" => 500, 
     "key" => "AIzaSyCZRvqG4MqNFZRQH62bwcHuANO_1MqHCio"
 ); 
 
 //gets json data from places API 
 $result = get_from_link($url.http_build_query($data)); 
 
-//decodes json to filter out irrelevatn information and return the location 
+//decodes json to filter out irrelevant information and return the location 
 // addresses. 
 $array_names = json_decode($result, true); 
 $ans = array(); 
