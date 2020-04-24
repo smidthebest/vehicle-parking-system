@@ -66,14 +66,33 @@
             autocompleteUpdate(mymap.getCenter().lat, mymap.getCenter().lng); 
         }
        
+
         //gets autocomplete results from API by sending the current term in the search box, 
         //and the current latitude and longitude of the map so that the results are biased to that location. 
         function autocompleteUpdate(lat, lng){
             if(lng < -180) lng = 360 + lng; 
             $("#auto").autocomplete({  
-                source: "API/autoController.php?lat="+lat+"&long="+lng  
+                source: function (request, response){
+                    $.ajax({
+                        url: "API/autoController.php",
+                        dataType: 'json', 
+                        data: {
+                            term: request.term, 
+                            lat: lat, 
+                            long: lng
+                        },
+                        success: function(data){
+                            response(data); 
+                        },
+                        headers: {
+                            'Authorization': 'Basic ' + btoa("testkey")
+                        }
+                    }); 
+                }
             }); 
         }
+
+        
 
         //When user submits form, the form is cleared, and whatever they entered is sent to
         //API which returns the latitude and longitude of the location on the map, and the map 
