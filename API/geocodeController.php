@@ -1,11 +1,12 @@
 <?php
-require "Request.php"; 
-include("cacheController/top-cache.php"); 
+require_once "Request.php"; 
+require_once "cache.php"; 
+
+$cache = top_cache(); 
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: GET");
-header("Access-Control-Max-Age: 3600");
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
@@ -20,6 +21,8 @@ if($requestMethod == "GET"){
 $request = new Request("geocode", $data, $requestMethod); 
 $request->processRequest(); 
 
-include("cacheController/bottom-cache.php"); 
+if(isset($cache)){
+    bottom_cache($cache); 
+} 
 ?>
 

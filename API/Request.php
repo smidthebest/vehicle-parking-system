@@ -1,5 +1,5 @@
 <?php
-require "util.php"; 
+require_once "util.php"; 
 
 class Request{
 
@@ -38,7 +38,12 @@ class Request{
         if($this->type == "auto"){
             $result = get_from_link(self::AUTO_STRING.http_build_query($this->data)); 
             $array_names = json_decode($result, true); 
+
+            if(!isset($array_names)){
+                $this->serverSideError(); 
+            }
             $ans = array(); 
+
             foreach($array_names["predictions"] as $key => $value){
                 array_push($ans, $value["description"]); 
             }
@@ -50,12 +55,20 @@ class Request{
         else if($this->type == "geocode"){
             $result = get_from_link(self::GEOCODE_STRING.http_build_query($this->data)); 
             $array = json_decode($result, true); 
-            
+            if(!isset($array)){
+                $this->serverSideError(); 
+            }
             $response['status_code_header'] = 'HTTP/1.1 200 OK'; 
             $response['body'] = json_encode( $array["results"][0]["geometry"]["location"]); 
             
             return $response; 
         }
+    }
+
+    private function serverSideError(){
+        $resposne['status_code_header'] = 'HTTP/1.1 500 Internet Server Error'; 
+        $response['body'] = null; 
+        return $response; 
     }
 
     //If a call is made that the api is not designed to handle, 404 code is sent out. 

@@ -18,14 +18,31 @@ class Cache {
         else return false; 
     }
 
+    // Cache the contents to a cache file 
     public function putCache(){
         $cached = fopen($this->cachefile, 'w');
         fwrite($cached, ob_get_contents());
         fclose($cached);
         ob_end_flush(); // Send the output to the browser
     }
+}
 
+function top_cache(){
+    $url = $_SERVER["REQUEST_URI"];
+    $cache = new Cache($url); 
 
+    if($cache->getCache()){
+        exit;
+    }
+    else {
+        ob_start(); // Start the output buffer
+        return $cache; 
+    }
+
+}
+
+function bottom_cache($cache){
+    $cache->putCache(); 
 
 }
 
