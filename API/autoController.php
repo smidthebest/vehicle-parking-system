@@ -6,7 +6,7 @@ $cache = top_cache();
 
 header("Content-Type: application/json;");
 
-$requestMethod = $_SERVER["REQUEST_METHOD"];
+$requestMethod = $_SERVER["REQUEST_METHOD"]; 
 
 if($requestMethod == "GET"){
     $name = $_GET["term"]; //what needs to be autocompleted by API
@@ -14,7 +14,7 @@ if($requestMethod == "GET"){
     $long = $_GET["long"]; //longitude of the center of map for biasing results 
 
     if(!isset($name) or !isset($lat) or !isset($long)){
-        header("HTTP/1.1 404 Not Found"); 
+        header("HTTP/1.1 400 Bad Request"); 
         exit(); 
     }
 

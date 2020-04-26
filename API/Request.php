@@ -27,14 +27,12 @@ class Request{
 
         header($response['status_code_header']); 
         if($response['body']){
-           
             echo $response['body']; 
         }
     }
 
     //sends request to api and filters to the appropriate data that the client requested. 
     private function getData(){
-         
         if($this->type == "auto"){
             $result = get_from_link(self::AUTO_STRING.http_build_query($this->data)); 
             $array_names = json_decode($result, true); 

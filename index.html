@@ -25,9 +25,9 @@
         </div>
         <div class ="container " id="button-actions" >
             <div>
-                <button class="actions">Edit</button>
-                <button class="actions">Add</button>
-                <button class="actions">Delete</button>
+                <button class="actions" onclick="edit()">Edit</button>
+                <button class="actions" onclick="setAdd()">Add</button>
+                <button class="actions" onclick="del()">Delete</button>
             </div>
             
             <form>
@@ -46,6 +46,10 @@
 
     <script>
         var mymap = L.map('mapid').setView([28.6139, 77.209], 8); 
+        var add = false;
+        var edit = false; 
+        var del = false; 
+
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
@@ -58,11 +62,43 @@
         var marker;  
         
         mymap.on("move", check); 
+        mymap.on("click", addPoly);
+        
+        var polygon; 
+        var markers = []; 
+
+        function addPoly(e){
+            if(add){
+                if(polygon == null) createPoly(e); 
+                addMarker(e.latlng); 
+                add = false; 
+            }
+        }
+
+        function addMarker(e){
+            polygon.addLatLng(e).addTo(mymap); 
+            var mark = L.marker(e).addTo(mymap); 
+            mark.dragging.enable(); 
+            mark.draggable = true; 
+            mark.autoPan = true; 
+            mark.setLatLng(e);  
+           // mark.on("move", moveMark, this); 
+           // mark.on('click', deletePoly); 
+            markers.push(mark); 
+            
+        }
+
+        function createPoly(e){
+            if(polygon != null){
+                polygon = null; 
+            }
+            polygon = L.polygon(e.latlng); 
+           // polygon.on('click', deletePoly); 
+        }
 
         //Whenever map is moved, the new center is updated, so that the autocomplete results
         //are biased to that specific location. 
         function check(e){
-            
             autocompleteUpdate(mymap.getCenter().lat, mymap.getCenter().lng); 
         }
        
@@ -85,14 +121,12 @@
                             response(data); 
                         },
                         headers: {
-                            'Authorization': 'Basic ' + btoa("testkey")
+                            "Content-type": "application/json"
                         }
                     }); 
                 }
             }); 
         }
-
-        
 
         //When user submits form, the form is cleared, and whatever they entered is sent to
         //API which returns the latitude and longitude of the location on the map, and the map 
@@ -111,6 +145,18 @@
                 } 
             });
         }); 
+
+         function setAdd(){
+            add = true; 
+        }
+
+        function del(){
+
+        }
+
+        function edit(){
+
+        }
 
     </script>
 </html>
