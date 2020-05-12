@@ -1,0 +1,132 @@
+CRITICAL - 2020-05-12 15:12:04 --> Call to undefined function App\Controllers\read_file()
+#0 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-12 15:12:04 --> Call to undefined function App\Controllers\read_file()
+#0 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-12 15:12:18 --> Call to undefined function App\Controllers\read_file()
+#0 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-12 15:13:05 --> Call to undefined function App\Controllers\read_file()
+#0 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-12 15:14:07 --> Call to undefined function App\Controllers\read_file()
+#0 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-12 15:15:24 --> Call to undefined function App\Controllers\read_file()
+#0 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-12 15:21:40 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 51, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(51): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:21:42 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 51, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(51): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:21:50 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 51, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(51): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:23:14 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 51, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(51): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:24:28 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 52, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(52): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:24:33 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 52, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(52): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:24:51 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 52, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(52): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:25:01 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 52, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(52): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:25:32 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 52, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(52): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}
+CRITICAL - 2020-05-12 15:25:33 --> fopen(../Models/Path.Drag.js): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(../Models...', '/Users/siddhart...', 52, Array)
+#1 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/app/Controllers/Maps.php(52): fopen('../Models/Path....', 'r')
+#2 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Maps->polydrag()
+#3 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Maps))
+#4 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/siddharthamishra/Desktop/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#7 {main}

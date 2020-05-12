@@ -11,6 +11,7 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
+        <script src="/maps/pathdrag"></script>
         <script src="//code.jquery.com/jquery-1.12.4.js"></script>
         <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -103,9 +104,9 @@
         </div>
         <div class ="container " id="button-actions" >
             <div>
-                <button class="actions" onclick="edit()">Edit</button>
                 <button class="actions" onclick="setAdd()">Add</button>
-                <button class="actions" onclick="del()">Delete</button>
+                <button id="delete" class="actions" style="display:none" onclick="setDel()">Delete</button>
+                <button id="save" class="actions" style="display:none" onclick="save()">Save</button>
             </div>
             
             <form>
@@ -144,6 +145,7 @@
         
         var polygon; 
         var markers = []; 
+        var finishPolys = []; 
 
         function addPoly(e){
             if(add){
@@ -161,7 +163,7 @@
             mark.autoPan = true; 
             mark.setLatLng(e);  
             mark.on("move", moveMark, this); 
-           // mark.on('click', deletePoly); 
+            mark.on('click', deletePoly); 
             markers.push(mark); 
             
         }
@@ -174,17 +176,75 @@
                 }
                 else lats.push(markers[i].getLatLng()); 
             }
-             polygon.remove(); 
              createPoly(lats); 
         }
 
         function createPoly(e){
             if(e.latlng != null) e = e.latlng; 
             if(polygon != null){
-                polygon = null; 
+                polygon.remove(); 
             }
-            polygon = L.polygon(e).addTo(mymap); 
-           // polygon.on('click', deletePoly); 
+
+            polygon = L.polygon(e, {dragging: true}).addTo(mymap); 
+            polygon.dragging.enable(); 
+            polygon.on('drag', dragPoly); 
+            polygon.on('click', deletePoly); 
+        }
+
+         //moves markers to new location of polygon. 
+         function dragPoly(e){
+            var lats = e.target.getLatLngs()[0]; 
+            for(var i = 0; i<lats.length; i++){
+               markers[i].remove(); 
+               markers[i].latlng = lats[i]; 
+               markers[i].addTo(mymap); 
+            }
+            
+            
+        }
+
+            //Deletes the targeted component
+        //if polygon is clicked then it is removed from map, markers removed from map.
+        //and refrences are delted. 
+        //if marker is deleted, polygon is reshaped. 
+        function deletePoly(e){
+            if(polygon == null) return; 
+            
+            if(del){
+                if(e.target == polygon){
+                    polygon.remove();
+                    polygon = null; 
+                    document.getElementById("save").style.display = "none"; 
+                    document.getElementById("delete").style.display = "none"; 
+                    for(var i = markers.length - 1; i>=0; i--){
+                        markers[i].remove(); 
+                    }
+                    markers = []; 
+                }
+                else {
+                    var lats = [];
+                    var rem = -1; 
+                    for(var i = 0; i<markers.length; i++){
+                        if(markers[i] == e.target){
+                           
+                            markers[i].remove(); 
+                            rem = i; 
+                        }
+                        else lats.push(markers[i].getLatLng()); 
+                        
+                    }
+                    markers.splice(rem, 1); 
+                    if(markers.length == 0) {
+                        polygon.remove(); 
+                        polygon = null; 
+                        document.getElementById("save").style.display = "none"; 
+                    }
+                    else createPoly(lats); 
+                }
+                
+                del = false; 
+            }
+                    
         }
 
         //Whenever map is moved, the new center is updated, so that the autocomplete results
@@ -234,7 +294,7 @@
                         mymap.setView(result, 18); 
                         autocompleteUpdate(result["lat"], result["lng"]); 
                         if(marker != null) marker.remove(); 
-                        marker = L.marker(result).addTo(mymap); 
+                       // marker = L.marker(result).addTo(mymap); 
                         $("#auto").val("");
                     } 
                 }, 
@@ -248,14 +308,66 @@
 
          function setAdd(){
             add = true; 
+            document.getElementById("save").style.display = "inline-block"; 
+            document.getElementById("delete").style.display = "inline-block"; 
+            
         }
 
-        function del(){
+        function save(){
+            if(polygon == null) {
+                return; 
+            }
 
+            polygon.bindPopup('This is polygon ' + (finishPolys.length +1)); 
+            polygon.fill = true; 
+            polygon.fillColor = '#ff0000' ; 
+            polygon.off("click"); 
+            polygon.off("drag"); 
+            polygon.on("click", setFocus); 
+            polygon.dragging.disable(); 
+
+            polygon.addTo(mymap); 
+            console.log(finishPolys.includes([polygon, markers]));
+            if(!finishPolys.includes([polygon, markers])) finishPolys.push([polygon, markers]); 
+            for(var i = 0; i<markers.length; i++){
+               
+                markers[i].dragging.disable(); 
+               
+            }
+
+            polygon = null; 
+            markers = []; 
+            document.getElementById("save").style.display = "none"; 
+            document.getElementById("delete").style.display = "none"; 
         }
 
-        function edit(){
+        function setFocus(e){
+            console.log(finishPolys);
+            for(var i = 0; i<finishPolys.length; i++){
+                if(finishPolys[i][0] == e.target){
+                    console.log(i); 
+                    save(); 
+                    polygon = finishPolys[i][0]; 
+                    markers = finishPolys[i][1]; 
+                    polygon.dragging.enable(); 
+                    polygon.on('drag', dragPoly); 
+                    polygon.on('click', deletePoly);
+                    for(var i = 0; i<markers.length; i++){
+                        markers[i].dragging.enable(); 
+                        markers[i].on("move", moveMark, this); 
+                        markers[i].on('click', deletePoly); 
+                    }
+                    document.getElementById("save").style.display = "inline-block"; 
+                    document.getElementById("delete").style.display = "inline-block"; 
+                    finishPolys.splice(i, 1); 
+                    return; 
+                }
+                
+            }
+        }
 
+        function setDel(){
+            del = true; 
         }
 
     </script>
