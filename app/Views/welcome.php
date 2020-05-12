@@ -87,7 +87,7 @@
         }
 
         #mapid {
-            height:50vmax; 
+            height:35vmax; 
             padding: 33vmin;
             z-index: 10;
             
@@ -154,23 +154,36 @@
         }
 
         function addMarker(e){
-            polygon.addLatLng(e).addTo(mymap); 
+            polygon.addLatLng(e); 
             var mark = L.marker(e).addTo(mymap); 
             mark.dragging.enable(); 
             mark.draggable = true; 
             mark.autoPan = true; 
             mark.setLatLng(e);  
-           // mark.on("move", moveMark, this); 
+            mark.on("move", moveMark, this); 
            // mark.on('click', deletePoly); 
             markers.push(mark); 
             
         }
 
+        function moveMark(e){
+            var lats =[]; 
+            for(var i = 0; i<markers.length; i++){
+                if(markers[i] == e.target){
+                    lats.push(e.latlng); 
+                }
+                else lats.push(markers[i].getLatLng()); 
+            }
+             polygon.remove(); 
+             createPoly(lats); 
+        }
+
         function createPoly(e){
+            if(e.latlng != null) e = e.latlng; 
             if(polygon != null){
                 polygon = null; 
             }
-            polygon = L.polygon(e.latlng); 
+            polygon = L.polygon(e).addTo(mymap); 
            // polygon.on('click', deletePoly); 
         }
 
@@ -191,9 +204,8 @@
                         url: "<?php echo base_url() ?>/maps/autocomplete/"+request.term+"/"+lat+"/"+lng,
                         dataType: 'json', 
                         
-                        complete: function(data){
-                            console.log(data['responseJSON']); 
-                            response(data['responseJSON']); 
+                        success: function(data){
+                            response(data); 
                         },
                         headers: {
                             "Content-type": "application/json",
@@ -212,23 +224,12 @@
             e.preventDefault(); 
             var loc = $("#auto").val(); 
               
-            // $.getJSON("maps/geocode/"+loc, function(result){
-            //     console.log(result); 
-            //     if(result != null){
-            //         mymap.setView(result, 18); 
-            //         autocompleteUpdate(result["lat"], result["lng"]); 
-            //         if(marker != null) marker.remove(); 
-            //         marker = L.marker(result).addTo(mymap); 
-            //         $("#auto").val("");
-            //     } 
-            // });
-
             $.ajax({
                 url:" maps/geocode/"+loc,
                 dataType: "json", 
-                complete: function(result){
-                    result = result["responseJSON"]; 
-                    console.log(result); 
+                success: function(result){
+                    
+                   
                     if(result != null){
                         mymap.setView(result, 18); 
                         autocompleteUpdate(result["lat"], result["lng"]); 
