@@ -98,29 +98,39 @@
         </style>
     </head>
 
-    <body >
-    <div class="container">
-            <h1>Parking Lot Central</h1>
-        </div>
-        <div class ="container " id="button-actions" >
-            <div>
-                <button class="actions" onclick="setAdd()">Add</button>
-                <button id="delete" class="actions" style="display:none" onclick="setDel()">Delete</button>
-                <button id="save" class="actions" style="display:none" onclick="save()">Save</button>
+    <body>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <a class="navbar-brand">Parking Tool</a>
+                </nav>
             </div>
-            
-            <form>
-                <div class = "input-group form-inline" id="address-form">
-                    <input  class="ui-autocomplete-input form-control" placeholder="Search Address" name = "term" id="auto" type="text">
-                    <div class="input-group-btn">
-                         <button class="btn btn-default" type="submit" name = "submit" >
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
+        </header>
+        <main>
+            <div class ="container " id="button-actions">
+                <div>
+                    <button class="actions" onclick="setAdd()">Add</button>
+                    <button id="delete" class="actions" style="display:none" onclick="setDel()">Delete</button>
+                    <button id="save" class="actions" style="display:none" onclick="save()">Save</button>
+                </div>          
+                <form>
+                    <div class = "input-group form-inline" id="address-form">
+                        <input  class="ui-autocomplete-input form-control" placeholder="Search Address" name = "term" id="auto" type="text">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" name = "submit" >
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
-        <div  class ="container" id="mapid" style="" ></div>
+                </form>
+            </div>
+            <div class ="container" id="mapid" style=""></div>
+        </main>
+        <footer>
+            <div class="container">
+                <span>Copyright YOLO Bus</span> 
+            </div>
+        </footer>
     </body>
 
     <script>
@@ -327,8 +337,15 @@
             polygon.dragging.disable(); 
 
             polygon.addTo(mymap); 
-            console.log(finishPolys.includes([polygon, markers]));
-            if(!finishPolys.includes([polygon, markers])) finishPolys.push([polygon, markers]); 
+           
+            var check = true; 
+            for(var i = 0; i<finishPolys.length; i++){
+                if(finishPolys[i][0] == polygon){
+                    check = false;
+                    break; 
+                }
+            }
+            if(check) finishPolys.push([polygon, markers]); 
             for(var i = 0; i<markers.length; i++){
                
                 markers[i].dragging.disable(); 
