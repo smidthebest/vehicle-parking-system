@@ -14,8 +14,8 @@
         <script src="/maps/pathdrag"></script>
         <script src="//code.jquery.com/jquery-1.12.4.js"></script>
         <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
 
         <style>
@@ -70,13 +70,12 @@
         }
         
         .actions{
-        display: inline-block;
+            border: 1px solid grey;
         
         }
 
-        #button-actions{
-            padding: 4vmin;
-            padding-left: 0vmin
+        .navbar-nav > li{
+         margin-right:30px;
         }
 
         body{
@@ -89,46 +88,68 @@
 
         #mapid {
             height:35vmax; 
-            padding: 33vmin;
+            padding: 0;
             z-index: 10;
-            
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+            line-height: 60px; /* Vertically center the text there */
             
         }
         
         </style>
     </head>
 
-    <body>
+    <body style="margin-bottom: 60px;">
         <header>
-            <div class="container">
-                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                    <a class="navbar-brand">Parking Tool</a>
-                </nav>
-            </div>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-secondary">
+                <a class="navbar-brand" >Parking Tool</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto" id ="button-actions">
+                    <li class="nav-item active">
+                        <a class="actions nav-link" onclick="setAdd()">Add</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="delete" class=" actions nav-link" style="display:none" onclick="setDel()">Delete</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="save" class="actions nav-link" style="display:none" onclick="save()">Save</a>
+                    </li>
+                </ul>
+                
+                </div>
+            </nav>
         </header>
-        <main>
-            <div class ="container " id="button-actions">
-                <div>
-                    <button class="actions" onclick="setAdd()">Add</button>
-                    <button id="delete" class="actions" style="display:none" onclick="setDel()">Delete</button>
-                    <button id="save" class="actions" style="display:none" onclick="save()">Save</button>
-                </div>          
-                <form>
-                    <div class = "input-group form-inline" id="address-form">
-                        <input  class="ui-autocomplete-input form-control" placeholder="Search Address" name = "term" id="auto" type="text">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit" name = "submit" >
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+        <main class="container" style ="padding: 2vmin">
+            <div class ="container mt-5" >
+
+                <div style="display: inline"class ="col-1-6" id="button-actions"> 
+                    
+                </div>                     
             </div>
+            <form  style="padding-bottom: 2vmin"class ="container">
+                <div class = "input-group " id="address-form">
+                    <input  class="ui-autocomplete-input form-control" placeholder="Search Address" name = "term" id="auto" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit" name = "submit" >
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
             <div class ="container" id="mapid" style=""></div>
         </main>
-        <footer>
+        <footer class ="footer bg-secondary">
             <div class="container">
-                <span>Copyright YOLO Bus</span> 
+                <p>Yolo Travel Tech Pvt. Ltd.</p> 
             </div>
         </footer>
     </body>
