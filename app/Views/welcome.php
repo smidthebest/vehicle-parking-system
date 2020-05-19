@@ -113,16 +113,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto" id ="button-actions">
+                <ul class="navbar-nav mr-auto" >
                     <li class="nav-item active">
                         <a class="actions nav-link" onclick="setAdd()">Add</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a id="clear" class="actions nav-link" onclick="clear()">Clear</a>
+                    </li>
+                    <li class="nav-item active">
                         <a id="delete" class=" actions nav-link" style="display:none" onclick="setDel()">Delete</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a id="save" class="actions nav-link" style="display:none" onclick="save()">Save</a>
                     </li>
+                    
                 </ul>
                 
                 </div>
@@ -402,6 +406,10 @@
                 }
                 
             }
+        }
+
+        function clear(){
+            
         }
 
         function setDel(){
