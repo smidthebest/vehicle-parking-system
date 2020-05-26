@@ -1,0 +1,31 @@
+CRITICAL - 2020-05-26 13:56:25 --> Class 'App\Controllers\PolysModel' not found
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Polys->saveFence()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Polys))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-26 14:44:43 --> Method name must be a string
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Polys.php(28): App\Models\PolysModel->addPoly(NULL, '28.4460703 77.0...')
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Polys->saveFence()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Polys))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-05-26 14:45:10 --> Method name must be a string
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Polys.php(28): App\Models\PolysModel->addPoly('asdfasdf@gmail....', '28.4460703 77.0...')
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Polys->saveFence()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Polys))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-05-26 14:46:03 --> Call to undefined method CodeIgniter\Database\Postgre\Result::getResults()
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Polys.php(28): App\Models\PolysModel->addPoly('asdfasdf@gmail....', '28.4460703 77.0...')
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Polys->saveFence()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Polys))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}

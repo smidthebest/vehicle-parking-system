@@ -9,6 +9,7 @@ class Maps extends ResourceController
 
 	public function index()
 	{
+        if(!isset($_SESSION["email"])) return view('signin'); 
 		return view('welcome');
     }
     

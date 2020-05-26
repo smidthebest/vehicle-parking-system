@@ -1,0 +1,475 @@
+CRITICAL - 2020-05-25 14:38:20 --> Cannot call constructor
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(886): App\Controllers\Accounts->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 14:38:21 --> Cannot call constructor
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(886): App\Controllers\Accounts->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 14:40:13 --> Cannot call constructor
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(886): App\Controllers\Accounts->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 15:44:46 --> Class '\CodeIgniter\Database\PostgreSQL\Connection' not found
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/Config.php(115): CodeIgniter\Database\Database->load(Array, 'default')
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(336): CodeIgniter\Database\Config::connect('default')
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(19): CodeIgniter\Model->__construct()
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#8 {main}
+CRITICAL - 2020-05-25 15:44:47 --> Class '\CodeIgniter\Database\PostgreSQL\Connection' not found
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/Config.php(115): CodeIgniter\Database\Database->load(Array, 'default')
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(336): CodeIgniter\Database\Config::connect('default')
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(19): CodeIgniter\Model->__construct()
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#8 {main}
+CRITICAL - 2020-05-25 15:46:28 --> pg_connect(): Unable to connect to PostgreSQL server: could not connect to server: Connection refused
+	Is the server running on host &quot;localhost&quot; (::1) and accepting
+	TCP/IP connections on port 3306?
+could not connect to server: Connection refused
+	Is the server running on host &quot;localhost&quot; (127.0.0.1) and accepting
+	TCP/IP connections on port 3306?
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', '/Users/siddhart...', 98, Array)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/Postgre/Connection.php(98): pg_connect('host=localhost ...')
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseConnection.php(377): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(557): CodeIgniter\Model->insert(Array, false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(31): CodeIgniter\Model->save(Array)
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#9 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#10 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#12 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#13 {main}
+CRITICAL - 2020-05-25 15:47:16 --> pg_connect(): Unable to connect to PostgreSQL server: FATAL:  role &quot;root&quot; does not exist
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', '/Users/siddhart...', 98, Array)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/Postgre/Connection.php(98): pg_connect('host=localhost ...')
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseConnection.php(377): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(557): CodeIgniter\Model->insert(Array, false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(31): CodeIgniter\Model->save(Array)
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#9 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#10 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#12 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#13 {main}
+CRITICAL - 2020-05-25 15:48:11 --> pg_connect(): Unable to connect to PostgreSQL server: FATAL:  role &quot;admin&quot; does not exist
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', '/Users/siddhart...', 98, Array)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/Postgre/Connection.php(98): pg_connect('host=localhost ...')
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseConnection.php(377): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Database/BaseBuilder.php(2234): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(729): CodeIgniter\Database\BaseBuilder->insert()
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(557): CodeIgniter\Model->insert(Array, false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(31): CodeIgniter\Model->save(Array)
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#9 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#10 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#12 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#13 {main}
+CRITICAL - 2020-05-25 16:14:17 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 16:16:25 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 16:18:51 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 16:19:47 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 16:19:48 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:19:59 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:21:54 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:22:30 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:22:35 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:23:25 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:23:37 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:23:38 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:23:41 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:25:49 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:26:13 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:27:18 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:27:30 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:27:45 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:27:59 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:28:19 --> Call to a member function get() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(776): require()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:29:20 --> Call to a member function save() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:29:22 --> Call to a member function save() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:29:23 --> Call to a member function save() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:29:24 --> Call to a member function save() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:29:24 --> Call to a member function save() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:29:25 --> Call to a member function save() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:30:13 --> Call to a member function save() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:31:38 --> Call to a member function model() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:31:47 --> Call to a member function model() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:31:50 --> Call to a member function model() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 19:34:11 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(12): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:35:05 --> Call to a member function database() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-05-25 19:35:20 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:36:50 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:37:02 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:37:02 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:37:03 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:37:03 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:37:03 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:37:03 --> You must set the database table to be used with your query.
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1206): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1662): CodeIgniter\Model->builder()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Models/UsersModel.php(11): CodeIgniter\Model->__get('load')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 19:37:58 --> Call to a member function database() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-05-25 19:37:58 --> Call to a member function database() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-05-25 19:37:58 --> Call to a member function database() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-05-25 19:37:58 --> Call to a member function database() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(33): App\Models\UsersModel->__construct()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-05-25 19:39:55 --> Allowed fields must be specified for model: App\Models\UsersModel
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(1234): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(709): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Model.php(557): CodeIgniter\Model->insert(Array, false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(41): CodeIgniter\Model->save(Array)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->addUser()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-05-25 20:10:36 --> Call to undefined method App\Controllers\Accounts::respond()
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->checkUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 20:12:06 --> Call to undefined function App\Controllers\respond()
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->checkUser()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-05-25 20:51:19 --> Call to a member function getElementsById() on null
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/View/View.php(246): include()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Common.php(1087): CodeIgniter\View\View->render('signup', Array, true)
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Accounts.php(22): view('signup')
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Accounts->signup()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Accounts))
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#8 {main}

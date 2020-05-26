@@ -1,11 +1,13 @@
 <?php namespace App\Controllers;
 
-class Home extends BaseController
+use CodeIgniter\RESTful\ResourceController;
+class Home extends ResourceController
 {
 	public function index()
 	{
-		return view('welcome');
+		return view('index');
 	}
+
 
 	//--------------------------------------------------------------------
 

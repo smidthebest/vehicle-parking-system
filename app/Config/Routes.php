@@ -34,6 +34,11 @@ $routes->get('/', 'Home::index');
 $routes->get("/maps/autocomplete/(:alphanum)/(:num)/(:num)", 'Maps::autocomplete/$1/$2/$3');
 $routes->get("/maps/geocode/(:alphanum)", 'Maps::geocode/$1'); 
 $routes->get("/maps/pathdrag", 'Maps::polydrag'); 
+$routes->get("/signin", 'Accounts::signin');
+$routes->post("signin", 'Accounts::checkUser'); 
+$routes->post("/up", 'Accounts::addUser');
+$routes->post("/saveFence", 'Polys::saveFence'); 
+$routes->get("/signup", 'Accounts::signup');
 
 /**
  * --------------------------------------------------------------------
