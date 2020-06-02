@@ -6,19 +6,18 @@ use CodeIgniter\Controller;
 
 class Accounts extends Controller
 {
-
-    public function __construct(){
-        // echo "hello";   
-        // Parent::__construct(); 
-        // $this->load->model("UsersModel"); 
-    }
+    protected $session;
     
 	public function signin()
 	{
+        session_unset(); 
+        session_destroy(); 
 		return view('signin');
     }
     
     public function signup(){
+        session_unset(); 
+        session_destroy(); 
         return view('signup'); 
     }
 
@@ -44,9 +43,12 @@ class Accounts extends Controller
         ]); 
 
         header("200 OK"); 
-        echo json_encode(true); 
-       
+        session_regenerate_id(true);
+        $this->session = \Config\Services::session(); 
         $_SESSION["email"] = $email; 
+        $_SESSION["fName"] = $fName; 
+        $_SESSION["sName"] = $sName; 
+        echo json_encode($_SESSION); 
         return; 
 
    }
@@ -62,7 +64,11 @@ class Accounts extends Controller
     if($check["pass"] == $pass) {
       
        $_SESSION["email"] = $email; 
-       echo (json_encode($_SESSION["email"])); 
+       $_SESSION["fName"] = $check["fname"]; 
+       $_SESSION["sName"] = $check["sname"]; 
+       echo (json_encode($_SESSION)); 
+       session_regenerate_id(true);
+
         return; 
     } 
     else{

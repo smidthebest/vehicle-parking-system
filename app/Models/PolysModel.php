@@ -14,7 +14,7 @@ class PolysModel extends Model
     public function addPoly($email, $polys ){
         $db = \Config\Database::connect();
         $query = $db->query("INSERT INTO public.\"Polys\" (email, polygon, date, id) VALUES ('$email', $polys, current_timestamp, default)"); 
-        return "INSERT INTO public.\"Polys\" (email, polygon, date, id) VALUES ('$email', $polys, current_timestamp, default)"; 
+        return "true"; 
 
 
     }

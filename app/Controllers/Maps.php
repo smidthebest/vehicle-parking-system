@@ -1,5 +1,5 @@
 <?php namespace App\Controllers;
-
+session_start(); 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\APIRequest;
 
@@ -46,15 +46,6 @@ class Maps extends ResourceController
         return $this->respond($res); 
     }
 
-    //app/Models/Path.Drag.js
-    public function polydrag(){
-       
-        header("HTTP/1.1 200 OK");
-        $file = fopen("../app/Models/Path.Drag.js", "r"); 
-        $ans = fread($file, filesize("../app/Models/Path.Drag.js")); 
-        fclose($file);
-        return $ans; 
-    }
 
 	//--------------------------------------------------------------------
 
