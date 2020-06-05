@@ -1,3 +1,54 @@
 CRITICAL - 2020-06-02 02:56:08 --> Constant expression contains invalid operations
 #0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
 #1 {main}
+CRITICAL - 2020-06-02 15:12:42 --> Class 'App\Controllers\PolyModel' not found
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Home->index()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-06-02 15:13:41 --> Class 'App\Controllers\PolyModel' not found
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Home->index()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-06-02 15:13:59 --> Class 'App\Controllers\PolyModel' not found
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Home->index()
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#5 {main}
+CRITICAL - 2020-06-02 15:15:19 --> Object of class CodeIgniter\Database\Postgre\Result could not be converted to string
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Views/index.php(210): CodeIgniter\Debug\Exceptions->errorHandler(4096, 'Object of class...', '/Users/siddhart...', 210, Array)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/View/View.php(246): include('/Users/siddhart...')
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Common.php(1087): CodeIgniter\View\View->render('index', Array, true)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Home.php(22): view('index')
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Home->index()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
+CRITICAL - 2020-06-02 15:20:35 --> Call to undefined method CodeIgniter\Database\Postgre\Result::getResultsArray()
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Home.php(21): App\Models\PolysModel->getPolys('siddhartham04@g...')
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Home->index()
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#6 {main}
+CRITICAL - 2020-06-02 15:36:58 --> Use of undefined constant console - assumed 'console' (this will throw an Error in a future version of PHP)
+#0 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Views/index.php(214): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', '/Users/siddhart...', 214, Array)
+#1 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/View/View.php(246): include('/Users/siddhart...')
+#2 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Common.php(1087): CodeIgniter\View\View->render('index', Array, true)
+#3 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/app/Controllers/Home.php(29): view('index')
+#4 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(914): App\Controllers\Home->index()
+#5 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/siddharthamishra/Documents/GitHub/vehicle-parking-system/system/Commands/Server/rewrite.php(34): require_once('/Users/siddhart...')
+#9 {main}
