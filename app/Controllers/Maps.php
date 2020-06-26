@@ -19,7 +19,7 @@ class Maps extends ResourceController
        $term= str_replace('%20', " ", $term) ; 
         $data = array(
             "input" => $term, 
-            "types" => "address",
+            // "types" => "address",
             "location" => "$lat,$lng",
             "radius" => 500, 
             "key" => "AIzaSyCZRvqG4MqNFZRQH62bwcHuANO_1MqHCio"

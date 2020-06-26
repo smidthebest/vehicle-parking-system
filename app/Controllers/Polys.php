@@ -11,7 +11,7 @@ class Polys extends Controller
         $id = $this->request->getVar("id");  
         $name = $this->request->getVar("name"); 
         $des = $this->request->getVar("descrip"); 
-        // $tags = explode(",", $this->request->getVar("tags")); 
+        $tags = explode(",", $this->request->getVar("tags")); 
 
         $model = new PolysModel(); 
         $count = 0; 
@@ -24,7 +24,7 @@ class Polys extends Controller
 
         $result = "tue"; 
         if($id == -1){
-            $result = $model->addPoly($_SESSION["email"], "ST_GeomFromText('Polygon(($polys))')", $name, $des);
+            $result = $model->addPoly($_SESSION["email"], "ST_GeomFromText('Polygon(($polys))')", $name, $des, $tags);
         } 
         else {
             $result = $model->updatePoly($id, "ST_GeomFromText('Polygon(($polys))')", $name, $des); 
@@ -33,6 +33,15 @@ class Polys extends Controller
         echo json_encode($result); 
         
 
+    }
+
+    public function deletePoly(){
+        $id = $this->request->getVar("id"); 
+        $model = new PolysModel(); 
+
+        $model->delete($id); 
+
+        return json_encode("true"); 
     }
 }
 ?>

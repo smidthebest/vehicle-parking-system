@@ -44,11 +44,10 @@ class Accounts extends Controller
 
         header("200 OK"); 
         session_regenerate_id(true);
-        $this->session = \Config\Services::session(); 
         $_SESSION["email"] = $email; 
         $_SESSION["fName"] = $fName; 
         $_SESSION["sName"] = $sName; 
-        echo json_encode($_SESSION); 
+        echo json_encode(true); 
         return; 
 
    }
@@ -66,7 +65,7 @@ class Accounts extends Controller
        $_SESSION["email"] = $email; 
        $_SESSION["fName"] = $check["fname"]; 
        $_SESSION["sName"] = $check["sname"]; 
-       echo (json_encode($_SESSION)); 
+       echo (json_encode(true)); 
        session_regenerate_id(true);
 
         return; 

@@ -102,8 +102,11 @@
 			</div>
 			<!-- navbar-menu-header -->
 			<ul class="nav navbar-menu">
+				<li class="nav-item">
+					<a href="/dashboard" class ="nav-link">Dashboard</a>
+				</li>
 				<li class="nav-item with-sub ">
-					<a href="" class="nav-link"><i data-feather="file"></i> File</a>
+					<a href="/" class="nav-link"><i data-feather="file"></i> Map</a>
 					<ul class="navbar-menu-sub">
 						<li class="nav-sub-item"><a type="button" class="nav-sub-link" data-toggle="modal"
 							data-target="#modal2"><i data-feather="save"></i>Save</a></li>
@@ -167,76 +170,85 @@
 		</header>
 		<!-- navbar -->
 		<main class="container" style="padding: 2vmin">
-			<div class="container mt-5">
-				<div style="display: inline" class="col-1-6" id="button-actions">
-				</div>
-			</div>
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-				aria-hidden="true">
-				<div class="modal-dialog  modal-dialog-centered" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Saved Polygons</h5>
-						</div>
-						<div class="modal-body">
-							<?php 
-								$num = 1; 
-								foreach($_SESSION["polys"] as $row) {
-								
-								    echo "<a  data-dismiss=\"modal\" type=\"button\" onclick = openPoly(".$num.")> ".$_SESSION["names"][$num-1]." last edited at ".$_SESSION["dates"][$num-1]."</a><br>"; 
-								    $num = $num+1; 
-								}
-								    ?>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			<div class="content content-fixed">
+            <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                <li class="breadcrumb-item"><a href="/dashboard">Parking Tool</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Map</li>
+              </ol>
+            </nav>
+            <h4 class="mg-b-0 tx-spacing--1">Map</h4>
+          </div>
+          
+        </div>
+
+			<div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog  modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Saved Polygons</h5>
+							</div>
+							<div class="modal-body">
+								<?php 
+									$num = 1; 
+									foreach($_SESSION["polys"] as $row) {
+									
+									    echo "<a style=\"text-align: left\" data-dismiss=\"modal\" type=\"button\" onclick = openPoly(".$num.")> ".$_SESSION["names"][$num-1]."     ... last edited at ...     ".$_SESSION["dates"][$num-1]."</a><br>"; 
+									    $num = $num+1; 
+									}
+									    ?>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
-				aria-hidden="true" style="display: none;">
-				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content tx-14">
-						<div class="modal-header">
-							<h6 class="modal-title" id="exampleModalLabel2">New Polygon</h6>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">×</span>
+				<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+					aria-hidden="true" style="display: none;">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content tx-14">
+							<div class="modal-header">
+								<h6 class="modal-title" id="exampleModalLabel2">New Polygon</h6>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form id="first" data-parsley-validate>
+									<div class="">
+										<div class="form-group">
+											<label>Name: <span class="tx-danger">*</span></label>
+											<input id="name" type="text" name="firstname" class="form-control " placeholder="Name" required>
+											<label>Description: <span class="tx-danger">*</span></label>
+											<textarea id = "descrip"type="text" name="lastname" class="form-control" placeholder="Description..." required></textarea>
+											<input id="tags" type="text" values="<?php echo $_SESSION["tags"]?>" class="form-control" placeholder="tags" data-role="tagsinput">
+										</div>
+										<!-- d-flex -->
+										<button type="submit"  class="btn btn-primary pd-x-20">Validate Form</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form id ="temp" style="padding-bottom: 2vmin" class="container">
+					<div class="input-group " id="address-form">
+						<input class="ui-autocomplete-input form-control" placeholder="Search Address" name="term" id="auto"
+							type="text">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit" name="submit">
+							<i class="glyphicon glyphicon-search"></i>
 							</button>
 						</div>
-						<div class="modal-body">
-							<form id="first" data-parsley-validate>
-								<div class="">
-									<div class="form-group">
-										<label>Name: <span class="tx-danger">*</span></label>
-										<input id="name" type="text" name="firstname" class="form-control " placeholder="Name" required>
-										<label>Description: <span class="tx-danger">*</span></label>
-										<textarea id = "descrip"type="text" name="lastname" class="form-control" placeholder="Description..." required></textarea>
-										<input id="tags" type="text" class="form-control" placeholder="tags" data-role="tagsinput">
-									</div>
-									<!-- d-flex -->
-									<button type="submit"  class="btn btn-primary pd-x-20">Validate Form</button>
-								</div>
-							</form>
-						</div>
-						<!-- <div class="modal-footer">
-							<button type="button" class="btn btn-primary tx-13" onclick="save()">Save changes</button>
-							</div> -->
 					</div>
-				</div>
+				</form>
+				<div class="container" id="mapid" style=""></div>
 			</div>
-			<form id ="temp" style="padding-bottom: 2vmin" class="container">
-				<div class="input-group " id="address-form">
-					<input class="ui-autocomplete-input form-control" placeholder="Search Address" name="term" id="auto"
-						type="text">
-					<div class="input-group-btn">
-						<button class="btn btn-default" type="submit" name="submit">
-						<i class="glyphicon glyphicon-search"></i>
-						</button>
-					</div>
-				</div>
-			</form>
-			<div class="container" id="mapid" style=""></div>
 		</main>
 		<footer class="footer">
 			<div>
@@ -247,10 +259,19 @@
 		</footer>
 		<script src="lib/parsleyjs/parsley.min.js"></script>
 		<script>
+			//console.log("<?php //var_dump($_SESSION["preload"])?>");
 			var mymap = L.map('mapid').setView([28.6139, 77.209], 8);
 			var add = false;
 			var del = false;
-			var id = -1;
+			var id = <?php 
+				if(isset($_SESSION["preload"])){
+					echo $_SESSION["preload"][0];
+			}
+				else {
+					echo -1; 
+				}
+			
+			?>
 			
 			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 			    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -269,6 +290,9 @@
 			var polygon;
 			var markers = [];
 			var finishPolys = [];
+
+			openPoly(id); 
+			
 			
 			function addPoly(e) {
 			    if (add) {
@@ -405,10 +429,10 @@
 			$("#temp").submit(function (e) {
 			    e.preventDefault();
 			    var loc = $("#auto").val();
-                $("#name").val(""); 
+			             $("#name").val(""); 
 			    $("#descrip").val(""); 
 			    $("#tags").val(""); 
-                id = -1; 
+			             id = -1; 
 			    $.ajax({
 			        url: " maps/geocode/" + loc,
 			        dataType: "json",
@@ -453,10 +477,10 @@
 			    $('#modal2').modal('toggle');
 			   save(); 
 			})
-
-            $("#first").submit(function(e) {
-                e.preventDefault(); 
-            })
+			
+			         $("#first").submit(function(e) {
+			             e.preventDefault(); 
+			         })
 			function save() {
 			    var latslngs = [];
 			    for (var i = 0; i < markers.length; i++) {
@@ -499,6 +523,7 @@
 			
 			
 			function openPoly(num) {
+				if(num == -1) return; 
 			    id = num - 1;
 			    edit = true;
 			    polys = []; 

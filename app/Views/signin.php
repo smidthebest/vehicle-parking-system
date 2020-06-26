@@ -102,7 +102,7 @@
             document.getElementById("passAlert").style.visibility = "visible";
           }
           else {
-            window.location.href = "<?php echo base_url()?>/";
+            window.location.href = "<?php echo base_url()?>/dashboard";
           }
         }
       })

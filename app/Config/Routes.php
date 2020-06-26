@@ -31,6 +31,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/trans/(:num)', 'Home::trans/$1'); 
 $routes->get("/maps/autocomplete/(:alphanum)/(:num)/(:num)", 'Maps::autocomplete/$1/$2/$3');
 $routes->get("/maps/geocode/(:alphanum)", 'Maps::geocode/$1'); 
 $routes->get("/signin", 'Accounts::signin');
@@ -38,6 +39,7 @@ $routes->post("signin", 'Accounts::checkUser');
 $routes->post("/up", 'Accounts::addUser');
 $routes->post("/saveFence", 'Polys::saveFence'); 
 $routes->get("/signup", 'Accounts::signup');
+$routes->get("/dashboard", 'Home::dash'); 
 
 /**
  * --------------------------------------------------------------------
