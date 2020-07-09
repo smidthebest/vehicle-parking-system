@@ -108,25 +108,23 @@
 				<li class="nav-item with-sub ">
 					<a href="/" class="nav-link"><i data-feather="file"></i> Map</a>
 					<ul class="navbar-menu-sub">
-						<li class="nav-sub-item"><a type="button" class="nav-sub-link" data-toggle="modal"
+						<li class="nav-sub-item"><a  class="nav-sub-link" data-toggle="modal"
 							data-target="#modal2"><i data-feather="save"></i>Save</a></li>
 						<li class="nav-sub-item"><a class="nav-sub-link"><i data-feather="delete"></i>Delete</a></li>
-						<li class="nav-sub-item"><a type="button" data-toggle="modal" data-target="#exampleModal"
+						<li class="nav-sub-item"><a  data-toggle="modal" data-target="#exampleModal"
 							class="nav-sub-link"><i data-feather="book-open"></i>Open</a></li>
 						<li class="nav-sub-item"><a class="nav-sub-link" type = "button" onclick="compClear()"><i data-feather="x-circle"></i>Clear</a></li>
 					</ul>
 				</li>
 			</ul>
 			<div class="navbar-right">
-			<a id="navbarSearch" href="" class="search-link"><i data-feather="search"></i></a>
 			<div class="dropdown dropdown-profile">
 				<a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
 					<div class="avatar avatar-sm">
 						<div class="avatar-initial rounded-circle" alt=""><?php 
 							$f1 = substr($_SESSION["fName"], 0, 1); 
 							$f2 = substr($_SESSION["sName"], 0, 1); 
-							echo $f1.$f2
-							
+							echo $f1.$f2	
 							?></div>
 				</a>
 				<!-- dropdown-link -->
@@ -141,31 +139,12 @@
 				</div>
 				<h6 class="tx-semibold mg-b-5"><?php echo $_SESSION["fName"]." ".$_SESSION["sName"]; ?></h6>
 				<a href="" class="dropdown-item"><i data-feather="settings"></i>Account Settings</a>
-				<a href ="/signin" type="button" onclick="logout()" class="dropdown-item"><i data-feather="log-out"></i>Sign Out</a>
+				<a href ="/signin"  onclick="logout()" class="dropdown-item"><i data-feather="log-out"></i>Sign Out</a>
 				</div><!-- dropdown-menu -->
 				</div><!-- dropdown -->
 			</div>
 			<!-- navbar-right -->
-			<div class="navbar-search">
-				<div class="navbar-search-header">
-					<input type="search" class="form-control" placeholder="Type and hit enter to search...">
-					<button class="btn"><i data-feather="search"></i></button>
-					<a id="navbarSearchClose" href="" class="link-03 mg-l-5 mg-lg-l-10"><i data-feather="x"></i></a>
-				</div>
-				<!-- navbar-search-header -->
-				<div class="navbar-search-body">
-					<label
-						class="tx-10 tx-medium tx-uppercase tx-spacing-1 tx-color-03 mg-b-10 d-flex align-items-center">Recent
-					Searches</label>
-					<ul class="list-unstyled">
-						<li><a href="dashboard-one.html">modern dashboard</a></li>
-						<li><a href="app-calendar.html">calendar app</a></li>
-						<li><a href="../../collections/modal.html">modal examples</a></li>
-						<li><a href="../../components/el-avatar.html">avatar</a></li>
-					</ul>
-				</div>
-				<!-- navbar-search-body -->
-			</div>
+			
 			<!-- navbar-search -->
 		</header>
 		<!-- navbar -->
@@ -226,10 +205,13 @@
 											<input id="name" type="text" name="firstname" class="form-control " placeholder="Name" required>
 											<label>Description: <span class="tx-danger">*</span></label>
 											<textarea id = "descrip"type="text" name="lastname" class="form-control" placeholder="Description..." required></textarea>
-											<input id="tags" type="text" values="<?php echo $_SESSION["tags"]?>" class="form-control" placeholder="tags" data-role="tagsinput">
+											<input id="tags" type="text" value="" class="form-control" placeholder="tags" data-role="tagsinput" style="display: inline">
+											<label>JSON: </label>
+											<textarea id = "json"type="text" name="lastname" class="form-control" placeholder="Json..." ></textarea>
+
 										</div>
 										<!-- d-flex -->
-										<button type="submit"  class="btn btn-primary pd-x-20">Validate Form</button>
+										<button type="submit"  class="btn btn-primary pd-x-20">Save</button>
 									</div>
 								</form>
 							</div>
@@ -259,7 +241,7 @@
 		</footer>
 		<script src="lib/parsleyjs/parsley.min.js"></script>
 		<script>
-			//console.log("<?php //var_dump($_SESSION["preload"])?>");
+			
 			var mymap = L.map('mapid').setView([28.6139, 77.209], 8);
 			var add = false;
 			var del = false;
@@ -429,10 +411,11 @@
 			$("#temp").submit(function (e) {
 			    e.preventDefault();
 			    var loc = $("#auto").val();
-			             $("#name").val(""); 
+			    $("#name").val(""); 
 			    $("#descrip").val(""); 
-			    $("#tags").val(""); 
-			             id = -1; 
+			    $("#tags").tagsinput("removeAll"); 
+				$("#json").val("");  
+			    id = -1; 
 			    $.ajax({
 			        url: " maps/geocode/" + loc,
 			        dataType: "json",
@@ -466,21 +449,16 @@
 			    });
 			});
 			
-			function setAdd() {
-			    add = true;
-			    document.getElementById("save").style.display = "inline-block";
-			    document.getElementById("delete").style.display = "inline-block";
-			
-			}
+		
 			
 			window.Parsley.on('form:success', function(){
-			    $('#modal2').modal('toggle');
 			   save(); 
 			})
 			
-			         $("#first").submit(function(e) {
-			             e.preventDefault(); 
-			         })
+			$("#first").submit(function(e) {
+				e.preventDefault(); 
+			})
+
 			function save() {
 			    var latslngs = [];
 			    for (var i = 0; i < markers.length; i++) {
@@ -489,11 +467,9 @@
 			    ids = []; 
 			    var name = $("#name").val(); 
 			    var descrip = $("#descrip").val(); 
+				var json = $("#json").val(); 
 			    var tags = $("#tags").val(); 
-			    $("#name").val(""); 
-			    $("#descrip").val(""); 
-			    $("#tags").val(""); 
-			    console.log(id); 
+			   
 			    <?php 
 				foreach($_SESSION["ids"] as $row){
 				    ?>
@@ -508,17 +484,27 @@
 			                id: id == -1 ? -1 : ids[id],
 			                name: name, 
 			                descrip: descrip, 
+							json: json, 
 			                tags: tags
 			            },
 			            method: "post",
 			            dataType: "json",
-			            success: function (result) {
-			                console.log(result);
-			            }
-			        })
-			    clear();
-			    id = -1;
-			    location.reload(true); 
+			        }).always(function(data){
+						if(data == "JSON Error"){
+							alert("There was an error with your json entry. Please correct the format and try again.")
+						}
+						else{
+							$('#modal2').modal('toggle');
+							$("#name").val(""); 
+							$("#descrip").val(""); 
+							$("#json").val(""); 
+							$("#tags").tagsinput("removeAll"); 
+							clear();
+							id = -1;
+							location.reload(true); 
+						}
+					})
+			   
 			}
 			
 			
@@ -529,6 +515,8 @@
 			    polys = []; 
 			    names = []; 
 			    descrips = []; 
+				jsons = []; 
+				tags = []; 
 			    <?php 
 				$num = 0; 
 				foreach($_SESSION["polys"] as $row) { ?>
@@ -542,11 +530,26 @@
 			            polys.push(temp);  
 			            names.push("<?php echo $_SESSION["names"][$num]?>"); 
 			            descrips.push("<?php echo $_SESSION["des"][$num] ?>")
+						jsons.push("<?php echo str_replace('"', '\"', $_SESSION["json"][$num])?>")
+						var tempTags = []; 
+						<?php foreach($_SESSION["tags"][$num] as $tag ){ ?>
+							tempTags.push("<?php echo str_replace('"', "",$tag)?>"); 
+						<?php } ?>
+
+						tags.push(tempTags)
 			            
 			    <?php $num = $num +1;  } ?>
 			    
 			    $("#name").val(names[id]); 
-			    $("#descrip").val(descrips[id]); 
+			    $("#descrip").val(descrips[id]);
+				$("#json").val(jsons[id]); 
+				// var tags = document.getElementById("tags"); 
+				// tags.value = tags[id]; 
+				$("#tags").tagsinput("removeAll"); 
+				for(var k = 0; k<tags[id].length; k++){
+					$("#tags").tagsinput('add', tags[id][k]); 
+				}
+
 			    //clear(); 
 			    if (polygon != null) polygon.remove();
 			    for (var i = 0; i < markers.length; i++) {

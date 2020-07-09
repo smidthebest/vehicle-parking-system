@@ -20,8 +20,8 @@ class Home extends Controller
 				$_SESSION["preload"][1] = false; 
 			}
 
-			//var_dump( $_SESSION); 
-			//return view('index');
+			// var_dump( $_SESSION); 
+			return view('index');
 
 		}
 	}
@@ -48,11 +48,14 @@ class Home extends Controller
 		$model = new PolysModel();
 		$data = [];  
 		$polys = $model->getPolys($_SESSION["email"]); 
+		// var_dump($polys); 
 		$ids = []; 
 		$names = []; 
 		$descrips = []; 
 		$dates = [];  
 		$tags = []; 
+		$jsons = []; 
+
 		foreach ($polys as $row) {
 			$temp = explode(",", substr(substr($row["st_astext"], 9), 0,  -2)); 
 			array_push($ids, $row["id"]); 
@@ -60,8 +63,9 @@ class Home extends Controller
 			array_push($names, $row["name"]); 
 			array_push($descrips, $row["description"]); 
 			array_push($dates, date("g:i A m-d-y", strtotime($row["date"])) ); 
-			echo $rows["tags"]; 
-			array_push($tags, $rows["tags"]); 
+			$tag_list = explode(",", substr($row["tags"], 1, -1)); 
+			array_push($tags, $tag_list); 
+			array_push($jsons, $row["info"]); 
 		}
 
 		$_SESSION["polys"] = $data; 
@@ -70,6 +74,8 @@ class Home extends Controller
 		$_SESSION["des"] = $descrips; 
 		$_SESSION["dates"] = $dates; 
 		$_SESSION["tags"] = $tags; 
+		$_SESSION["json"] = $jsons; 
+		
 	}
 
 

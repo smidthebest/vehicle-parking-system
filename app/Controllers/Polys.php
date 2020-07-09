@@ -7,11 +7,17 @@ use CodeIgniter\Controller;
 class Polys extends Controller
 {
     public function saveFence(){
+        
         $poly = $this->request->getVar("polygon");
         $id = $this->request->getVar("id");  
         $name = $this->request->getVar("name"); 
         $des = $this->request->getVar("descrip"); 
         $tags = explode(",", $this->request->getVar("tags")); 
+        $json = $this->request->getVar("json"); 
+
+        if(trim($json) == ""){
+            $json = "{}"; 
+        }
 
         $model = new PolysModel(); 
         $count = 0; 
@@ -24,10 +30,10 @@ class Polys extends Controller
 
         $result = "tue"; 
         if($id == -1){
-            $result = $model->addPoly($_SESSION["email"], "ST_GeomFromText('Polygon(($polys))')", $name, $des, $tags);
+            $result = $model->addPoly($_SESSION["email"], "ST_GeomFromText('Polygon(($polys))')", $name, $des, $tags, $json);
         } 
         else {
-            $result = $model->updatePoly($id, "ST_GeomFromText('Polygon(($polys))')", $name, $des); 
+            $result = $model->updatePoly($id, "ST_GeomFromText('Polygon(($polys))')", $name, $des, $tags, $json); 
         }
     
         echo json_encode($result); 
