@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 session_start(); 
 use App\Models\PolysModel;
+use App\Models\TagsModel; 
 use CodeIgniter\Controller;
 
 
@@ -18,7 +19,16 @@ class Polys extends Controller
         if(trim($json) == ""){
             $json = "{}"; 
         }
+        $name = str_replace('"', "\"", $name); 
 
+        $tagModel = new TagsModel(); 
+        foreach ($tags as $tag){
+            if($tagModel->find($tag) == null){
+                $tagModel->insert([
+                    'tags' => $tag
+                ]); 
+            }
+        }
         $model = new PolysModel(); 
         $count = 0; 
         $polys = ""; 
@@ -28,7 +38,6 @@ class Polys extends Controller
         }
         $polys .= $poly[0][0].' '.$poly[0][1]; 
 
-        $result = "tue"; 
         if($id == -1){
             $result = $model->addPoly($_SESSION["email"], "ST_GeomFromText('Polygon(($polys))')", $name, $des, $tags, $json);
         } 
@@ -49,5 +58,6 @@ class Polys extends Controller
 
         return json_encode("true"); 
     }
+
 }
 ?>

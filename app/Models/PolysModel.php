@@ -15,15 +15,12 @@ class PolysModel extends Model
         try {
             $db = \Config\Database::connect();
             $data = $this->preProcessTags($tags); 
-            // $query =  $db->query("INSERT INTO public.\"Polys\" (email, polygon, date, id, name, description, tags, info ) VALUES ('$email', $polys, current_timestamp, default, '$name', '$des', '$data', '$json' )"); 
             $query = $db->simpleQuery("INSERT INTO public.\"Polys\" (email, polygon, date, id, name, description, tags, info ) VALUES ('$email', $polys, current_timestamp, default, '$name', '$des', '$data', '$json' )"); 
             if($query){
                 $res = "Success!"; 
             }
             else {
-                // log_message("error", "query error!"); 
                 $error = $db->error(); 
-                // $res = $error["message"]; 
                 if(strpos($error["message"], "json") === false){
                     $res = "Query Error"; 
                 }
@@ -33,7 +30,6 @@ class PolysModel extends Model
             }
         }
         catch (\Throwable $th) {
-            // log_message("error", "Database connection error!"); 
             $res = $th->__toString(); 
         }
         finally {
@@ -63,7 +59,6 @@ class PolysModel extends Model
         try {
             $db = \Config\Database::connect();
             $data = $this->preProcessTags($tags); 
-            // $query = $db->query("UPDATE public.\"Polys\" SET polygon = $polys, name = '$name', description = '$des', date = current_timestamp, tags = '$data' , info = '$json' WHERE id = $id"); 
             if($db->simpleQuery("UPDATE public.\"Polys\" SET polygon = $polys, name = '$name', description = '$des', date = current_timestamp, tags = '$data' , info = '$json' WHERE id = $id")){
                 $query = "Success!"; 
             }

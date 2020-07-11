@@ -60,12 +60,12 @@ class Home extends Controller
 			$temp = explode(",", substr(substr($row["st_astext"], 9), 0,  -2)); 
 			array_push($ids, $row["id"]); 
 			array_push($data, $temp); 
-			array_push($names, $row["name"]); 
-			array_push($descrips, $row["description"]); 
+			array_push($names, $this->cleanStr($row["name"])); 
+			array_push($descrips, $this->cleanStr($row["description"])); 
 			array_push($dates, date("g:i A m-d-y", strtotime($row["date"])) ); 
 			$tag_list = explode(",", substr($row["tags"], 1, -1)); 
-			array_push($tags, $tag_list); 
-			array_push($jsons, $row["info"]); 
+			array_push($tags, $this->cleanArra($tag_list)); 
+			array_push($jsons, $this->cleanStr($row["info"])); 
 		}
 
 		$_SESSION["polys"] = $data; 
@@ -76,6 +76,32 @@ class Home extends Controller
 		$_SESSION["tags"] = $tags; 
 		$_SESSION["json"] = $jsons; 
 		
+	}
+
+	private function cleanArra($arr){
+		for ($i=0; $i < count($arr) ; $i++) { 
+			$arr[$i] = $this->cleanStr($arr[$i]); 
+		}
+
+		return $arr; 
+	}
+
+	private function cleanStr($str){
+		// return $this->handleLineBreaks($this->handleBacklash($str)); 
+		return $this->handleQuotes($this->handleLineBreaks($this->handleBacklash($str))); 
+	}
+
+
+    private function handleQuotes($str){
+        return str_replace('"', '\"', $str); 
+    }
+
+    private function handleLineBreaks($str){
+        return preg_replace('/\s+/', ' ', trim($str));
+	}
+	
+	private function handleBacklash($str){
+		return str_replace("\\", "\\ \\", $str); 
 	}
 
 

@@ -40,6 +40,7 @@ $routes->post("/up", 'Accounts::addUser');
 $routes->post("/saveFence", 'Polys::saveFence'); 
 $routes->get("/signup", 'Accounts::signup');
 $routes->get("/dashboard", 'Home::dash'); 
+$routes->get("/tags/getTags", 'Tags::getTags');
 
 /**
  * --------------------------------------------------------------------
