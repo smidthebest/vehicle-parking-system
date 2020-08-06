@@ -182,6 +182,8 @@
 								<h5 class="modal-title" id="exampleModalLabel">Saved Polygons</h5>
 							</div>
 							<div class="modal-body">
+							<input class="ui-autocomplete-input form-control" placeholder="Search Polygon" name="poly"
+							id="searchPolygon" type="text">
 								<?php 
 									$num = 1; 
 									foreach($_SESSION["polys"] as $row) {
@@ -572,7 +574,7 @@
 						temp.push([<?php echo $temp[0].",", $temp[1] ?>]);                    
 			        <?php } ?>
 					polys.push(temp);
-				names.push("<?php echo $_SESSION["name"][$num]?>");
+				names.push("<?php echo $_SESSION["names"][$num]?>");
 				descrips.push("<?php echo $_SESSION["des"][$num] ?>")
 				jsons.push("<?php echo  $_SESSION["json"][$num]?>")
 				var tempTags = []; 
@@ -593,7 +595,7 @@
 
 			$("#tags").tagsinput("removeAll");
 			for (var k = 0; k < tags[id].length; k++) {
-				$("#tags").tagsinput('add', tags[id][k]);
+				// $("#tags").tagsinput('add', tags[id][k]);
 			}
 
 

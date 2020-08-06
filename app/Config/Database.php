@@ -33,9 +33,9 @@ class Database extends \CodeIgniter\Database\Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'localhost',
-		'username' => 'siddharthamishra',
-		'password' =>  '',
+		'hostname' => 'database-1.ccgm7f9goesu.us-west-1.rds.amazonaws.com',
+		'username' => 'smid',
+		'password' =>  'password',
 		'database' => 'helo',
 		'DBDriver' => 'Postgre',
 		'DBPrefix' => '',
@@ -50,7 +50,7 @@ class Database extends \CodeIgniter\Database\Config
 		'compress' => false,
 		'strictOn' => false,
 		'failover' => [],
-		'port'     => 5432,
+		'port'     => 5433,
 	];
 
 	/**
