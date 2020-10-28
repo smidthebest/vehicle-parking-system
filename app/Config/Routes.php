@@ -41,6 +41,7 @@ $routes->post("/saveFence", 'Polys::saveFence');
 $routes->get("/signup", 'Accounts::signup');
 $routes->get("/dashboard", 'Home::dash'); 
 $routes->get("/tags/getTags", 'Tags::getTags');
+$routes->post("/polys/autocomplete/(:alphanum)", 'Home::findPoly/$1');
 
 /**
  * --------------------------------------------------------------------

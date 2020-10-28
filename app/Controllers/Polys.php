@@ -50,6 +50,8 @@ class Polys extends Controller
 
     }
 
+    
+
     public function deletePoly(){
         $id = $this->request->getVar("id"); 
         $model = new PolysModel(); 

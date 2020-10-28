@@ -33,10 +33,10 @@ class Database extends \CodeIgniter\Database\Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'database-1.ccgm7f9goesu.us-west-1.rds.amazonaws.com',
+		'hostname' => 'parking-first-db.cnsd0izpgn7m.us-west-1.rds.amazonaws.com',
 		'username' => 'smid',
-		'password' =>  'password',
-		'database' => 'helo',
+		'password' => 'password',
+		'database' => 'postgres',
 		'DBDriver' => 'Postgre',
 		'DBPrefix' => '',
 		'pConnect' => false,
@@ -50,7 +50,7 @@ class Database extends \CodeIgniter\Database\Config
 		'compress' => false,
 		'strictOn' => false,
 		'failover' => [],
-		'port'     => 5433,
+		'port'     => 5432,
 	];
 
 	/**

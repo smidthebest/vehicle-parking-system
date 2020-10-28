@@ -48,7 +48,6 @@ class Home extends Controller
 		$model = new PolysModel();
 		$data = [];  
 		$polys = $model->getPolys($_SESSION["email"]); 
-		// var_dump($polys); 
 		$ids = []; 
 		$names = []; 
 		$descrips = []; 
@@ -64,7 +63,7 @@ class Home extends Controller
 			array_push($descrips, $this->cleanStr($row["description"])); 
 			array_push($dates, date("g:i A m-d-y", strtotime($row["date"])) ); 
 			$tag_list = explode(",", substr($row["tags"], 1, -1)); 
-			array_push($tags, $this->cleanArra($tag_list)); 
+			array_push($tags, $this->cleanArray($tag_list)); 
 			array_push($jsons, $this->cleanStr($row["info"])); 
 		}
 
@@ -78,7 +77,25 @@ class Home extends Controller
 		
 	}
 
-	private function cleanArra($arr){
+	public function findPoly($name){
+		$model = new PolysModel(); 
+		$email = $_SESSION["email"]; 
+		$result = $model->findPolys($email, $name); 
+		// return ($name); 
+		// return $result; 
+        $ids = []; 
+        $names = []; 
+        foreach($result as $row){
+            array_push($ids, $row["id"]); 
+            array_push($names, $this->cleanStr($row["name"]));
+		}
+		
+		// $_SESSION["searchIds"] = 
+		return json_encode($names); 
+        
+    }
+
+	private function cleanArray($arr){
 		for ($i=0; $i < count($arr) ; $i++) { 
 			$arr[$i] = $this->cleanStr($arr[$i]); 
 		}

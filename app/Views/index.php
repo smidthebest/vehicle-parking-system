@@ -188,7 +188,7 @@
 									$num = 1; 
 									foreach($_SESSION["polys"] as $row) {
 									
-									    echo "<a style=\"text-align: left\" data-dismiss=\"modal\" type=\"button\" onclick = openPoly(".$num.")> ".$_SESSION["names"][$num-1]."     ... last edited at ...     ".$_SESSION["dates"][$num-1]."</a><br>"; 
+									    echo "<a style=\"text-align: left\" data-dismiss=\"modal\" type=\"button\" onclick = openPoly(".$num.")> ".$_SESSION["names"][$num-1]."</a><br>"; 
 									    $num = $num+1; 
 									}
 									    ?>
@@ -361,6 +361,7 @@
 
 		}
 
+		
 		//Deletes the targeted component
 		//if polygon is clicked then it is removed from map, markers removed from map.
 		//and refrences are delted. 
@@ -403,6 +404,26 @@
 			autocompleteUpdate(mymap.getCenter().lat, mymap.getCenter().lng);
 		}
 
+		$("#searchPolygon").autocomplete({
+			source: function(req, response){
+				$.ajax({
+					url: "<?php echo base_url() ?>/polys/autocomplete/" + req.term,
+					
+					method: "post", 
+					dataType: "json", 
+
+					success: function(data){
+						console.log(typeof data);
+						console.log(data); 
+						response(data); 
+					}, 
+					headers: {
+						"Content-type": "application/json",
+						'Access-Control-Allow-Origin': '*'
+					}
+				})
+			}
+		});
 
 		//gets autocomplete results from API by sending the current term in the search box, 
 		//and the current latitude and longitude of the map so that the results are biased to that location. 
@@ -416,6 +437,8 @@
 						dataType: 'json',
 
 						success: function (data) {
+							console.log(typeof data); 
+							console.log(data); 
 							response(data);
 						},
 						headers: {
@@ -439,10 +462,13 @@
 			$("#tags").tagsinput("removeAll");
 			$("#json").val("");
 			id = -1;
+			console.log("hi there maties"); 
+			console.log("<?php echo base_url() ?>/maps/geocode/" + loc);
 			$.ajax({
-				url: " maps/geocode/" + loc,
+				url: "<?php echo base_url() ?>/maps/geocode/" + loc,
 				dataType: "json",
 				success: function (result) {
+					console.log("wassup"); 
 					if (result != null) {
 						mymap.setView(result, 18);
 						var lat = result["lat"];
@@ -500,6 +526,7 @@
 			            <?php
 				}
 				?>
+
 				$.ajax({
 					url: "<?php echo base_url() ?>/saveFence",
 					data: {

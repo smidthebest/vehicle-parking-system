@@ -42,17 +42,28 @@ class PolysModel extends Model
     public function getPolys($email){
         try {
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT ST_AsText(polygon), id, name, description, date, tags, info FROM public.\"Polys\" WHERE email ='$email' ORDER BY name")->getResult('array'); 
+            $query = $db->query("SELECT * FROM public.\"Polys\" WHERE email ='$email' ORDER BY name")->getResult('array'); 
         } catch (\Throwable $th) {
-            $query = "Database Error"; 
+            $query = $th; 
         }
         finally{
             $db->close(); 
             return $query; 
         }
-        
-        
-        
+    }
+
+    public function findPolys($email, $str){
+        try {
+            $db = \Config\Database::connect(); 
+            $query = $db->query("SELECT name, id FROM public.\"Polys\" WHERE (name LIKE '%$str%' or description LIKE '%$str%') AND email = '$email'")->getResult('array');
+        } catch(\Throwable $th){
+            $query = "Database Error"; 
+        }
+        finally{
+            $db->close(); 
+            // return "SELECT name, id FROM public.\"Polys\" WHERE (name LIKE '%$str%' or description LIKE '%$str%') AND email = '$email'";
+            return $query; 
+        }
     }
 
     public function updatePoly($id, $polys, $name, $des, $tags, $json){
