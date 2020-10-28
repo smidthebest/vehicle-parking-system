@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:8080/';
+	public $baseURL = 'http://ec2-3-101-27-127.us-west-1.compute.amazonaws.com/vehicle-parking-system/public/';
 
 	/*
 	|--------------------------------------------------------------------------
