@@ -54,9 +54,12 @@ class Home extends Controller
 		$dates = [];  
 		$tags = []; 
 		$jsons = []; 
+		$dataforme = []; 
 
 		foreach ($polys as $row) {
 			$temp = explode(",", substr(substr($row["st_astext"], 9), 0,  -2)); 
+			// $temp = $row["st_astext"]; 
+			array_push($dataforme, $row["st_astext"]); 
 			array_push($ids, $row["id"]); 
 			array_push($data, $temp); 
 			array_push($names, $this->cleanStr($row["name"])); 
@@ -74,6 +77,7 @@ class Home extends Controller
 		$_SESSION["dates"] = $dates; 
 		$_SESSION["tags"] = $tags; 
 		$_SESSION["json"] = $jsons; 
+		$_SESSION["dataForMe"] = $polys; 
 		
 	}
 

@@ -249,9 +249,7 @@
 			</div>
 	</main>
 	<footer class="footer">
-		<div>
-			<span>&copy; Yolo Travel Tech Pvt. Ltd. </span>
-		</div>
+		
 		<div>
 		</div>
 	</footer>
@@ -261,9 +259,16 @@
 	
 	<script>
 
+		/*
+		<?php var_dump( $_SESSION) ?>
+		*/
+
+
+		//map object that shows up on screen.
 		var mymap = L.map('mapid').setView([28.6139, 77.209], 8);
 		var add = false;
 		var del = false;
+		//id checks to see if the user has come before 
 		var id = <?php 
 				if (isset($_SESSION["preload"])) {
 			echo $_SESSION["preload"][0];
@@ -277,6 +282,7 @@
 		var allTags = []; 
 		getTags(); 
 
+		//This is the main map layer htat we see on the map that we are getting from mapbox. 
 			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 				maxZoom: 18,
@@ -285,9 +291,11 @@
 				zoomOffset: -1,
 				accessToken: 'pk.eyJ1Ijoic21pZGRtaXNoIiwiYSI6ImNrOTA4a2xwajAwNWozZXM1c2FnanlmNTQifQ.f53gGVXjiBqVqYXum8n8wA'
 			}).addTo(mymap);
+
 		autocompleteUpdate(mymap.getCenter().lat, mymap.getCenter().lng);
 		var marker;
 
+		//creating listeners for the map to update based on if it is clicked or moved. 
 		mymap.on("move", check);
 		mymap.on("click", addPoly);
 
@@ -556,6 +564,7 @@
 				})
 
 		}
+		//sets all the tags to allTags varaible so that we can use them later for autocomplete for tags.
 		function getTags () {
 			$.ajax({
 				url: "<?php echo base_url()?>/tags/getTags",
@@ -572,8 +581,9 @@
 			
 		}
 
-
+		//Opens the polygon that has been selected. 
 		function openPoly(num) {
+			//sets the autocomplete for the tags -> this actually does not work yet still haven't figured out why
 			$("#tags").tagsinput({
 				typeahead: {
 					source: function(){
@@ -582,7 +592,9 @@
 				}
 			}); 
 
+			//If -1 is passed, that means taht no polygon was selected and this was a user simply going to the map to create a polygon or find a new one. 
 			if (num == -1) return;
+
 			id = num - 1;
 			edit = true;
 			polys = [];
@@ -590,6 +602,8 @@
 			descrips = [];
 			jsons = [];
 			tags = []; 
+
+			//Here we are getting all the information in teh $_Session variables and bringing it to the JS so that we can use it on the map. 
 			    <?php 
 				$num = 0;
 			foreach($_SESSION["polys"] as $row) { ?>
@@ -614,6 +628,7 @@
 					<?php $num = $num + 1;
 			} ?>
 
+			//We are pushign all the information to the form so if user clicks on teh polygon they can see teh information. 
 				$("#name").val(names[id]);
 			$("#descrip").val(descrips[id]);
 			$("#json").val(jsons[id]);
@@ -634,6 +649,7 @@
 			markers = [];
 			polygon = null;
 
+			//adding the new polygon to the map. 
 			for (var i = 0; i < polys[num - 1].length; i++) {
 				addMarker(polys[num - 1][i]);
 			}

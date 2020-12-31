@@ -68,9 +68,7 @@
   </div><!-- content -->
 
   <footer class="footer">
-    <div>
-      <span>&copy; Yolo Travel Tech Pvt. Ltd. </span>
-    </div>
+    
     <div>
 
     </div>

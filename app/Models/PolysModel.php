@@ -42,7 +42,7 @@ class PolysModel extends Model
     public function getPolys($email){
         try {
             $db = \Config\Database::connect();
-            $query = $db->query("SELECT * FROM public.\"Polys\" WHERE email ='$email' ORDER BY name")->getResult('array'); 
+            $query = $db->query("SELECT *, ST_asText(polygon) FROM public.\"Polys\" WHERE email ='$email' ORDER BY name")->getResult('array'); 
         } catch (\Throwable $th) {
             $query = $th; 
         }
