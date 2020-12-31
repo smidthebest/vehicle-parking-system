@@ -35,7 +35,7 @@ class Database extends \CodeIgniter\Database\Config
 		'DSN'      => '',
 		'hostname' => 'parking-first-db.cnsd0izpgn7m.us-west-1.rds.amazonaws.com',
 		'username' => 'smid',
-		'password' => 'password',
+		'password' => '',
 		'database' => 'postgres',
 		'DBDriver' => 'Postgre',
 		'DBPrefix' => '',
